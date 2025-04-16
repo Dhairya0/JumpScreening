@@ -1,8 +1,8 @@
-# render.yaml
 services:
   - type: web
     name: live-tasks
     env: elixir
+    rootDir: live_tasks       # 👈 Tells Render where your app lives
     buildCommand: mix deps.get && mix compile
     startCommand: mix phx.server
     plan: free
