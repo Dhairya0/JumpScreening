@@ -2,7 +2,7 @@ services:
   - type: web
     name: live-tasks
     env: elixir
-    rootDir: live_tasks       # 👈 Tells Render where your app lives
+    rootDir: live_tasks\lib\live_tasks         # 👈 tells Render to cd into this folder before build
     buildCommand: mix deps.get && mix compile
     startCommand: mix phx.server
     plan: free
