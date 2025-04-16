@@ -1,0 +1,15 @@
+# render.yaml
+services:
+  - type: web
+    name: live-tasks
+    env: elixir
+    buildCommand: mix deps.get && mix compile
+    startCommand: mix phx.server
+    plan: free
+    region: oregon
+    branch: main
+    envVars:
+      - key: PHX_SERVER
+        value: true
+      - key: SECRET_KEY_BASE
+        generateValue: true
